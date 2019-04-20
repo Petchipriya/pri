@@ -1,0 +1,356 @@
+<html>
+<head>
+
+<!-- <script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	function submitform(){
+		var xhr =new(XMLHttpRequest());
+		xhr.open(form.method,form.action,true);
+		xhr.setRequestHeader("Content-Type",'application/x-www-form-urlencoded');
+		var FD = FormData();
+		// for(name in data) {
+    // 	FD.append(data[name]);
+  	// 	}
+		
+		  // Define what happens in case of error
+		xhr.addEventListener('error', function(event) {
+		alert('Oops! Something went wrong.');
+		});
+		// alert("Sending Json");
+		//var xhr =new(XMLHttpRequest());
+		//document.
+		// xhr.open(form.method,form.action,true);
+		// xhr.setRequestHeader("Content-Type",'application/json');
+		// var data= (JSON.stringify($("#myForm").serializeArray()));
+		// var json_str = {data}
+		xhr.send(FD);
+}
+//*/
+// function urlencodeFormData(fd){
+//     var s = '';
+//     function encode(s){ return encodeURIComponent(s).replace(/%20/g,'+'); }
+//     for(var pair of fd.entries()){
+//         if(typeof pair[1]=='string'){
+//             s += (s?'&':'') + encode(pair[0])+'='+encode(pair[1]);
+//         }
+//     }
+//     return s;
+// }
+function urlencodeFormData(fd){
+    var params = new URLSearchParams();
+    for(var pair of fd.entries()){
+        typeof pair[1]=='string' && params.append(pair[0], pair[1]);
+    }
+    return params.toString();
+}
+var form = document.myForm;
+xhr.open('POST', form.action, false);
+xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+xhr.send(urlencodeFormData(new FormData(form)));
+// $(document).ready(function(){
+//     var contextroot = "/services/"
+//     $("#myForm").submit(function(e){
+//         e.preventDefault();
+//         var form = $(this);
+//         var action = form.attr("action");
+//         var data = form.serializeArray();
+//         $.ajax({
+//                     url: contextroot+action,
+//                     dataType: 'json',
+//                     type: 'POST',
+//                     contentType: 'application/json',
+//                     data: JSON.stringify(submitform(data)),
+//                     success: function(data){
+//                         console.log("DATA POSTED SUCCESSFULLY"+data);
+//                     },
+//                     error: function( jqXhr, textStatus, errorThrown ){
+//                         console.log( errorThrown );
+//                     }
+//         });
+// });
+// });
+// //utility function
+// function submitform(data) {
+//    var unindexed_array = data;
+//    var indexed_array = {};
+//    $.map(unindexed_array, function(n, i) {
+//     indexed_array[n['value']];
+//    });
+//    return indexed_array;
+// }
+</script> -->
+</head>
+<body>
+        <link rel="stylesheet" type="text/css" href="style12.css">
+        <link rel="stylesheet" type="text/css "
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<form target="http://localhost:8080" method="POST" name="myForm" enctype="application/x-www-form-urlencoded" Content-Type="text/html">
+<div>
+<h1> PERSONALITY TEST</h1>
+Q1.What type of books do you prefer to read ?<BR><BR>
+<input type="radio" name="book" value="1" >Crime
+<BR>
+<input type="radio"  name="book" value ="2">Mythology
+<BR>
+<input type="radio" name="book" value="3" >Fiction
+<BR>
+<input type="radio"  name="book"  value="4" >Romance
+<BR>
+<input type="radio"  name="book" value="5" >Classic
+<BR>
+<input type="radio" name="book" value="6" >Sci-Fi
+<BR>
+<BR>
+</div>
+<div>
+Q2.What type of movies do you prefer to watch ?<BR><BR>
+<input type="radio"  name="movie" value="1">Horror
+<BR>
+<input type="radio" name="movie" value="2">War
+<BR>
+<input type="radio" name="movie" value="3">Mystery
+<BR>
+<input type="radio" name="movie" value="4">Adventure
+<BR>
+<input type="radio" name="movie" value="5">Romance
+<BR>
+<input type="radio" name="movie" value="6">Superhero Movie
+<BR>
+<BR>
+</div>
+<div>
+Q3.Do you like to meet people ?<BR><BR>
+<input type="radio" name="meet" value="1">Yes
+<BR>
+<input type="radio" name="meet" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q4.Are you the host of large parties?<BR><BR>
+<input type="radio" name="host" value="1">Yes
+<BR>
+<input type="radio" name="host" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q5.How do you spend your evening?<BR><BR>
+<input type="radio" name="spend" value="1">Reading/Studying
+<BR>
+<input type="radio" name="spend" value="2">Exercise
+<BR>
+<input type="radio" name="spend" value="3">Relaxing(watching tv, listening to music etc.)
+<BR>
+<input type="radio" name="spend" value="4">Hanging out with friends
+<BR>
+<BR>
+</div>
+<div>
+Q6.You like to work with technologies you know or like to learn new technologies??<BR><BR>
+<input type="radio" name="learn" value="1">Work with known technologies
+<BR>
+<input type="radio" name="learn" value="2">Learn new technologies and work
+<BR>
+<BR>
+</div>
+<div>
+Q7.Does public speaking scare you or do you take it as a challenge?.<BR><BR>
+<input type="radio" name="speaking" value="1">It scares me
+<BR>
+<input type="radio" name="speaking" value="2">I take it as a challenge
+<BR>
+<BR>
+</div>
+<div>
+Q8.Do you believe in short term goals or long term ones?<BR><BR>
+<input type="radio" name="goal" value="1">Short term
+<BR>
+<input type="radio" name="goal" value="2">Long term
+<BR>
+<BR>
+</div>
+<div>
+Q9.Do you like to multitask or do one thing at a time but with perfection?<BR><BR>
+<input type="radio" name="task" value="1">Multitask
+<BR>
+<input type="radio" name="task" value="2">One thing at a time but with perfection
+<BR>
+<BR>
+</div>
+<div>
+Q10.I like to find new ways for a problem or stick to tried and tested ways?<BR><BR>
+<input type="radio" name="problem" value="1">Try new things
+<BR>
+<input type="radio"  name="problem" value="2">Stick to old,tried and tested ways
+<BR>
+<BR>
+</div>
+<div>
+Q11.What will you do if your boss shouts at you?<BR><BR>
+<input type="radio" name="boss" value="1">Analyze the reason and apologize if there is mistake from your side
+<BR>
+<input type="radio" name="boss" value="2">Confront him/her if there is no mistake from your side
+<BR>
+<input type="radio" name="boss" value="3">Sit quiet even if there is no mistake from your side
+<BR>
+<BR>
+</div>
+<div>
+Q12.I enjoy paintings and can understand them?<BR><BR>
+<input type="radio" name="paintings" value="1">Yes
+<BR>
+<input type="radio" name="paintings" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q13.Do you like to play sports or not?<BR><BR>
+<input type="radio" name="play" value="1">Yes
+<BR>
+<input type="radio" name="play" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q14.Are your opinions generally similar to the masses or opposite to what they think?<BR><BR>
+<input type="radio" name="opinion" value="1">Similar to the masses
+<BR>
+<input type="radio" name="opinion" value="2">Opposite to what they think
+<BR>
+<BR>
+</div>
+<div>
+Q15.Do you believe that other people have good intentions?<BR><BR>
+<input type="radio" name="intention" value="1">Yes
+<BR>
+<input type="radio" name="intention" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q16.Will you make friends on the first day of work/college or within a few days<BR><BR>
+<input type="radio" name="firstday" value="1">First day
+<BR>
+<input type="radio" name="firstday" value="2">Within few days
+<BR>
+<BR>
+</div>
+<div>
+Q17.I do more than what has been asked?<BR><BR>
+<input type="radio" name="asked" value="1">Yes
+<BR>
+<input type="radio" name="asked" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q18.Do you feel comfortable with people who are not of your type?<BR><BR>
+<input type="radio" name="comfortable" value="1">Yes
+<BR>
+<input type="radio" name="comfortable" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q19.Are you short tempered?<BR><BR>
+<input type="radio" name="tempered" value="1">Yes
+<BR>
+<input type="radio" name="tempered" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q20.I need a push to get started<BR><BR>
+<input type="radio" name="push" value="1">Yes
+<BR>
+<input type="radio" name="push" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q21.You like to work alone or in a team?<BR><BR>
+<input type="radio" name="alone" value="1">Work alone
+<BR>
+<input type="radio" name="alone" value="2">Work in a team
+<BR>
+<BR>
+</div>
+<div>
+Q22.Do you often hold grudges?<BR><BR>
+<input type="radio" name="grudge" value="1">Yes
+<BR>
+<input type="radio" name="grudge" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q23.Do you recheck your work to make sure there's no fault in it even if you're running out of time?<BR><BR>
+<input type="radio" name="recheck" value="1">Yes
+<BR>
+<input type="radio" name="recheck" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q24.I expect my people to work harder than I do.<BR><BR>
+<input type="radio" name="hard" value="1">Yes
+<BR>
+<input type="radio" name="hard" value="2">No
+<BR>
+<BR>
+</div>
+<div>
+Q25.You would prefer a door to door sales job or a desk job?<BR><BR>
+<input type="radio" name="job" value="1">Door to Door job
+<BR>
+<input type="radio" name="job" value="2">Desk job
+<BR>
+<BR>
+</div>
+<div>
+Q26.If your boss has assigned you a new project, and at the same time your colleague is put into another project based on a technology which you worked in your previous projects. He needs the basic do's and don'ts and basic knowledge to work on the project a basic report. So would you give him the report or else ask him to do it by himself?<BR><BR>
+<input type="radio" name="report"  value="1">Give him the report
+<BR>
+<input type="radio" name="report" value="2">Ask him to do by himself
+<BR>
+<BR>
+</div>
+<div>
+Q27.Do you view yourself more<BR><BR>
+<input type="radio" name="yourself" value="1">Calm and composed
+<BR>
+<input type="radio" name="yourself" value="2">Animated and spirited
+<BR>
+<BR>
+</div>
+<div>
+Q28.Would you rather work in a manner which is<BR><BR>
+<input type="radio" name="manner" value="1">Scheduled
+<BR>
+<input type="radio" name="manner" value="2">Spontaneous
+<BR>
+<BR>
+</div>
+<div>
+Q29.Which is worse?<BR><BR>
+<input type="radio" name="worse" value="1">Being too objective and accepting
+<BR>
+<input type="radio" name="worse" value="2">Being too skeptical and critical
+<BR>
+<BR>
+</div>
+<div>
+Q30.Is there more benefit in<BR><BR>
+<input type="radio" name="benefit" value="1">Discussing a matter
+<BR>
+<input type="radio" name="benefit" value="2">Resolving a matter
+<BR>
+<BR>
+</div>
+<button type="submit" class="btn btn-primary" >SUBMIT</button>
+</form>
+</body>
+
+</html>
